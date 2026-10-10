@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Révisio — Formez-vous et révisez à votre rythme</title>
+<meta name="description" content="Plateforme de formation en ligne : cours, fiches de révision par thème, QCM corrigés et suivi de votre progression, sur ordinateur et mobile.">
+<meta name="theme-color" content="#f6f5f4">
+<meta property="og:title" content="Révisio — Formez-vous et révisez à votre rythme">
+<meta property="og:description" content="Cours, fiches de révision, QCM corrigés et suivi de progression.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0075de;--sky:#e6f3fe;--marigold:#ffb110;--coral:#f64932;--skywash:#62aef0;--midnight:#02093a;
+  --paper:#f6f5f4;--white:#fff;--ink:rgba(0,0,0,.95);--ink9:rgba(0,0,0,.9);--ink6:rgba(0,0,0,.6);--graphite:#615d59;--stone:#757575;
+  --line:rgba(0,0,0,.08);--ok:#1a8a4a;--okbg:#e7f6ed;--ko:#c8321c;--kobg:#fdecea;
+  --r:12px;--rb:8px;--max:1200px;--g:clamp(16px,4vw,40px);
+  --sans:"Inter",system-ui,-apple-system,Arial,sans-serif;--serif:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--g)}
+h1,h2,h3{font-weight:600;color:var(--ink)}
+.dl{font-size:clamp(44px,7.4vw,96px);line-height:1.04;letter-spacing:-.048em;font-weight:600}
+.d2{font-size:clamp(32px,4.6vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700}
+.h3{font-size:22px;line-height:1.27;font-weight:700;letter-spacing:-.01em}
+.serif{font:400 clamp(18px,1.6vw,20px)/1.56 var(--serif);color:var(--graphite)}
+.muted{color:var(--graphite)}.small{font-size:14px;line-height:1.43}.cap{font-size:12px;color:var(--stone);font-weight:500;letter-spacing:.02em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:var(--rb);border:1px solid transparent;
+  font:500 15px/1.2 var(--sans);cursor:pointer;transition:background .2s,color .2s,transform .2s;background:transparent;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn-p{background:var(--blue);color:#fff}.btn-p:hover{background:#005fb8}
+.btn-g{background:var(--sky);color:var(--blue)}.btn-g:hover{background:#d4eafd}
+.btn-t{color:var(--ink)}.btn-t:hover{background:rgba(0,0,0,.05)}
+.btn-o{border-color:rgba(0,0,0,.2)}.btn-o:hover{background:var(--white)}
+.btn-w{background:#fff;color:var(--midnight)}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:500}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.hl{background:linear-gradient(transparent 62%,rgba(98,174,240,.45) 62%);padding:0 .06em}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(246,245,244,.92);backdrop-filter:blur(10px);box-shadow:0 .7px 1.462px 0 rgb(0 0 0/.015),0 3px 9px 0 rgb(0 0 0/.03)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-.03em}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--midnight);color:#fff;display:grid;place-items:center;font-style:normal;font-size:15px}
+.links{display:flex;gap:2px}
+.links a{padding:10px 14px;border-radius:var(--rb);color:rgba(0,0,0,.54);font-weight:500;font-size:15px;transition:.2s}
+.links a:hover,.links a.on{color:var(--ink);background:rgba(0,0,0,.05)}
+.nav-r{display:flex;gap:8px;align-items:center}
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--marigold);display:grid;place-items:center;font-weight:700;font-size:14px;border:0;cursor:pointer}
+
+/* landing */
+.hero{padding:clamp(48px,8vw,96px) 0 clamp(40px,6vw,72px);text-align:center}
+.hero .pill{background:var(--marigold);margin-bottom:24px}
+.hero h1{max-width:13ch;margin:0 auto}
+.hero p{max-width:620px;margin:24px auto 32px}
+.hero-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.mock{margin:56px auto 0;max-width:980px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;grid-template-columns:200px 1fr;gap:16px;text-align:left}
+.mock-side{background:var(--paper);border-radius:8px;padding:12px;display:grid;gap:6px;align-content:start;font-size:13px}
+.mock-side span{padding:6px 8px;border-radius:6px}.mock-side span.on{background:#fff;font-weight:600}
+.mock-main{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mock-tile{border-radius:10px;padding:16px;min-height:110px;display:flex;flex-direction:column;justify-content:space-between;font-size:13px}
+.mock-tile b{font-size:28px;letter-spacing:-.03em}
+.mock-q{grid-column:1/-1;border:1px solid var(--line);border-radius:10px;padding:16px;font-size:14px}
+.mock-q div{margin-top:8px;padding:8px 10px;border:1px solid var(--line);border-radius:6px}
+.mock-q div.ok{background:var(--okbg);border-color:#9fd8b5}
+.sec{padding:clamp(56px,8vw,80px) 0}
+.sec-h{text-align:center;max-width:720px;margin:0 auto 40px}
+.sec-h p{margin-top:14px}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat{display:flex;flex-direction:column;gap:10px;min-height:230px}
+.feat .ico{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-size:22px;margin-bottom:8px}
+.feat.accent{border:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--midnight);color:#fff;font-weight:700;font-size:14px;margin-bottom:16px}
+.band{background:var(--midnight);color:#fff;border-radius:var(--r);padding:clamp(32px,6vw,64px);display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.band h2{color:#fff}
+.band p{color:rgba(255,255,255,.75);margin-top:12px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--stone)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:10px;color:var(--graphite)}
+footer{border-top:1px solid var(--line);padding:32px 0 calc(32px + env(safe-area-inset-bottom));font-size:14px;color:var(--stone)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* auth */
+.auth{min-height:calc(100vh - 64px);display:grid;place-items:center;padding:40px var(--g)}
+.auth .card{width:100%;max-width:420px;padding:32px}
+.auth h1{font-size:28px;letter-spacing:-.03em;margin-bottom:6px}
+.fld{display:grid;gap:6px;margin-top:16px;font-size:14px;font-weight:500}
+.fld input,.fld select{min-height:46px;padding:10px 12px;border:1px solid rgba(0,0,0,.16);border-radius:var(--rb);background:#fff;font-size:16px;width:100%}
+.fld input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--sky)}
+.err{color:var(--ko);font-size:14px;margin-top:12px;min-height:20px}
+.switch{margin-top:20px;font-size:14px;text-align:center;color:var(--graphite)}
+.switch a{color:var(--blue);font-weight:500}
+
+/* app */
+.app{padding-top:32px;padding-bottom:96px}
+.app-h{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.app-h h1{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.035em;line-height:1.1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.stat{border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:6px}
+.stat b{font-size:34px;letter-spacing:-.04em;line-height:1}
+.stat span{font-size:13px;font-weight:500}
+.grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.course{display:flex;flex-direction:column;gap:12px;cursor:pointer;transition:border-color .2s}
+.course:hover{border-color:rgba(0,0,0,.2)}
+.course-top{height:120px;border-radius:8px;display:flex;align-items:flex-end;padding:14px;font-size:40px}
+.bar{height:8px;border-radius:9999px;background:rgba(0,0,0,.07);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue);border-radius:9999px;transition:width .5s}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.chart{display:flex;align-items:flex-end;gap:8px;height:160px;padding-top:12px}
+.chart div{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end;font-size:11px;color:var(--stone)}
+.chart i{width:100%;max-width:36px;border-radius:6px 6px 2px 2px;background:var(--skywash)}
+.chart i.good{background:var(--blue)}
+.list{display:grid}
+.list>*{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.list>*:last-child{border-bottom:0}
+.score{font-weight:700;padding:3px 10px;border-radius:9999px;font-size:13px}
+.score.g{background:var(--okbg);color:var(--ok)}.score.m{background:#fff4dc;color:#8a5a00}.score.b{background:var(--kobg);color:var(--ko)}
+.empty{text-align:center;padding:28px 12px;color:var(--stone);font-size:14px}
+
+/* course page */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:24px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:12px 16px;border:0;background:none;cursor:pointer;font-weight:500;color:rgba(0,0,0,.54);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.tab[aria-selected=true]{color:var(--ink);border-color:var(--blue)}
+.chap{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.chap-list{display:grid;gap:4px;position:sticky;top:80px}
+.chap-list button{display:flex;gap:10px;align-items:center;text-align:left;padding:10px 12px;border-radius:var(--rb);border:0;background:none;cursor:pointer;font-size:14px;font-weight:500}
+.chap-list button[aria-current=true]{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.chk{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(0,0,0,.25);display:grid;place-items:center;font-size:11px;flex:none}
+.chk.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.lesson h2{font-size:28px;letter-spacing:-.03em;margin-bottom:16px}
+.lesson p{margin-bottom:14px;color:var(--graphite);font:400 18px/1.6 var(--serif)}
+.lesson ul{margin:0 0 16px 20px;color:var(--graphite)}
+.lesson li{margin:6px 0}
+.callout{background:#fff4dc;border-radius:8px;padding:14px 16px;font-size:15px;margin:8px 0 20px;display:flex;gap:10px}
+.themes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.themes button{border:1px solid var(--line);background:#fff;border-radius:9999px;padding:8px 14px;cursor:pointer;font-size:14px;font-weight:500}
+.themes button[aria-pressed=true]{background:var(--midnight);color:#fff;border-color:var(--midnight)}
+.flash{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fc{display:block;width:100%;padding:0;color:inherit;perspective:1000px;min-height:220px;cursor:pointer;border:0;background:none;text-align:left}
+.fc-in{position:relative;width:100%;height:100%;min-height:220px;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip .fc-in{transform:rotateY(180deg)}
+.fc-f,.fc-b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);padding:20px;display:flex;flex-direction:column;justify-content:space-between}
+.fc-f{background:#fff;border:1px solid var(--line)}
+.fc-f strong{font-size:19px;line-height:1.3;letter-spacing:-.01em}
+.fc-b{background:var(--midnight);color:#fff;transform:rotateY(180deg);font-size:15px;line-height:1.5}
+.fc-b small,.fc-f small{font-size:12px;opacity:.6}
+.known{position:absolute;top:12px;right:12px;font-size:11px;font-weight:600;background:var(--okbg);color:var(--ok);padding:3px 8px;border-radius:9999px}
+.quiz{max-width:760px}
+.q-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:14px;color:var(--stone)}
+.q-text{font-size:clamp(20px,2.4vw,26px);font-weight:600;letter-spacing:-.02em;line-height:1.3;margin:16px 0 20px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;text-align:left;padding:14px 16px;border:1px solid rgba(0,0,0,.14);border-radius:10px;background:#fff;cursor:pointer;font-size:16px;transition:.15s;min-height:56px}
+.opt:hover:not(:disabled){border-color:var(--blue);background:var(--sky)}
+.opt b{width:28px;height:28px;border-radius:6px;background:var(--paper);display:grid;place-items:center;font-size:13px;flex:none}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}.opt.ok b{background:var(--ok);color:#fff}
+.opt.ko{background:var(--kobg);border-color:var(--ko)}.opt.ko b{background:var(--ko);color:#fff}
+.opt:disabled{cursor:default}
+.explain{margin-top:16px;padding:14px 16px;border-radius:10px;background:var(--paper);font-size:15px;display:none}
+.explain.on{display:block}
+.q-nav{display:flex;justify-content:flex-end;margin-top:20px}
+.result{text-align:center;padding:40px 24px}
+.ring{width:150px;height:150px;margin:0 auto 20px;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;letter-spacing:-.04em}
+.recap{text-align:left;margin-top:28px;display:grid;gap:8px}
+.recap div{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:8px;background:var(--paper);font-size:14px}
+
+/* bottom bar mobile */
+.tabbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom));justify-content:space-around}
+.tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:500;color:var(--stone);padding:6px 10px;border-radius:8px;min-width:64px}
+.tabbar a span{font-size:20px;line-height:1}
+.tabbar a.on{color:var(--blue)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140px);background:var(--midnight);color:#fff;padding:12px 18px;border-radius:10px;font-size:14px;z-index:90;transition:transform .3s;max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0)}
+.demo{background:var(--midnight);color:rgba(255,255,255,.85);font-size:12.5px;text-align:center;padding:8px var(--g)}
+.demo a{color:#fff;text-decoration:underline}
+
+@media (max-width:960px){
+  .feats,.courses,.flash{grid-template-columns:1fr 1fr}
+  .steps,.stats{grid-template-columns:1fr 1fr}
+  .grid2,.band{grid-template-columns:1fr}
+  .chap{grid-template-columns:1fr}
+  .chap-list{position:static;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;scrollbar-width:none}
+  .mock{grid-template-columns:1fr}.mock-side{display:none}
+}
+@media (max-width:720px){
+  .links{display:none}
+  .in-app .tabbar{display:flex}
+  .in-app .toast{bottom:88px}
+  .nav-r .hide-m{display:none}
+}
+@media (max-width:560px){
+  .feats,.courses,.flash,.steps{grid-template-columns:1fr}
+  .mock-main{grid-template-columns:1fr 1fr}.mock-tile:nth-child(3){display:none}
+  .hero-cta .btn{flex:1}
+  .stat b{font-size:28px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Maquette de démonstration · données enregistrées uniquement sur cet appareil · <a href="tel:+33641478339">Contacter le créateur</a></div>
+<header class="nav"><div class="wrap nav-in">
+  <a href="#/" class="logo"><i>R</i>Révisio</a>
+  <nav class="links" id="links"></nav>
+  <div class="nav-r" id="navR"></div>
+</div></header>
+<main id="view"></main>
+<nav class="tabbar" id="tabbar" aria-label="Navigation de l'espace"></nav>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ================= CONTENU ================= */
+const COURSES=[
+ {id:"projet",titre:"Gestion de projet",emoji:"🗂️",color:"#ffb110",niveau:"Débutant",duree:"6 h",desc:"Planifier, piloter et livrer un projet dans les délais, du cahier des charges au bilan.",
+  chapitres:[
+   {t:"Les bases d'un projet",c:`<p>Un projet est un ensemble d'actions ayant un objectif précis, un début, une fin et des ressources limitées. On le distingue des activités courantes, qui se répètent.</p><div class="callout">💡 <span>Retenez le triangle <b>coût – délai – qualité</b> : modifier l'un impacte les deux autres.</span></div><ul><li>Un objectif clair et mesurable</li><li>Un périmètre défini</li><li>Des parties prenantes identifiées</li></ul>`},
+   {t:"Le cahier des charges",c:`<p>Le cahier des charges formalise le besoin du client : contexte, objectifs, contraintes, livrables attendus et critères de réussite.</p><p>Il sert de référence tout au long du projet et limite les malentendus entre le commanditaire et l'équipe.</p><div class="callout">💡 <span>Un bon objectif est <b>SMART</b> : spécifique, mesurable, atteignable, réaliste et temporellement défini.</span></div>`},
+   {t:"Planifier avec le diagramme de Gantt",c:`<p>Le diagramme de Gantt représente les tâches sur une ligne de temps. Il montre leur durée, leur enchaînement et les jalons importants.</p><ul><li><b>Tâche</b> : une action à réaliser</li><li><b>Jalon</b> : un point de contrôle, sans durée</li><li><b>Chemin critique</b> : la suite de tâches qui fixe la durée totale</li></ul>`},
+   {t:"Piloter et clôturer",c:`<p>Le pilotage consiste à suivre l'avancement, les risques et le budget grâce à des indicateurs et des réunions régulières.</p><p>La clôture comprend la livraison, la validation par le client et un bilan pour capitaliser sur l'expérience.</p>`}],
+  fiches:[
+   {th:"Fondamentaux",q:"Qu'est-ce qu'un projet ?",r:"Un ensemble d'actions avec un objectif précis, un début, une fin et des ressources limitées."},
+   {th:"Fondamentaux",q:"Le triangle du projet",r:"Coût, délai et qualité : modifier l'un des trois impacte les deux autres."},
+   {th:"Cadrage",q:"Rôle du cahier des charges",r:"Formaliser le besoin (contexte, objectifs, contraintes, livrables) et servir de référence commune."},
+   {th:"Cadrage",q:"Objectif SMART",r:"Spécifique, Mesurable, Atteignable, Réaliste, Temporellement défini."},
+   {th:"Planification",q:"Qu'est-ce qu'un jalon ?",r:"Un point de contrôle important du projet, sans durée, qui marque une étape."},
+   {th:"Planification",q:"Le chemin critique",r:"La suite de tâches sans marge : tout retard sur l'une d'elles retarde la fin du projet."}],
+  qcm:[
+   {q:"Qu'est-ce qui distingue un projet d'une activité courante ?",o:["Il est réalisé par une seule personne","Il a un début et une fin définis","Il n'a pas de budget","Il se répète chaque année"],a:1,e:"Un projet est temporaire : il a un début et une fin, contrairement aux activités courantes qui se répètent."},
+   {q:"Le triangle du projet relie…",o:["Coût, délai, qualité","Client, équipe, fournisseur","Risque, budget, planning","Analyse, conception, test"],a:0,e:"Coût, délai et qualité sont interdépendants : jouer sur l'un affecte les autres."},
+   {q:"Que signifie le « M » de SMART ?",o:["Motivant","Mesurable","Modulable","Maîtrisé"],a:1,e:"Un objectif doit être mesurable pour qu'on puisse vérifier s'il est atteint."},
+   {q:"Dans un diagramme de Gantt, un jalon…",o:["Dure au moins une semaine","Est une tâche facultative","N'a pas de durée","Remplace le chemin critique"],a:2,e:"Un jalon est un point de contrôle ponctuel : il n'a pas de durée."},
+   {q:"Un retard sur une tâche du chemin critique…",o:["N'a aucun effet","Retarde la fin du projet","Réduit le budget","Annule le jalon suivant"],a:1,e:"Les tâches du chemin critique n'ont pas de marge : tout retard décale la date de fin."},
+   {q:"Quelle étape permet de capitaliser sur l'expérience ?",o:["Le cadrage","Le bilan de clôture","La réunion de lancement","Le diagramme de Gantt"],a:1,e:"Le bilan de fin de projet recense ce qui a fonctionné et ce qu'il faut améliorer."}]},
+ {id:"excel",titre:"Bureautique : Excel",emoji:"📊",color:"#62aef0",niveau:"Intermédiaire",duree:"8 h",desc:"Formules, mise en forme, tableaux et graphiques pour gagner du temps au quotidien.",
+  chapitres:[
+   {t:"Prendre en main l'interface",c:`<p>Un classeur contient des feuilles, elles-mêmes composées de cellules repérées par une colonne (lettre) et une ligne (chiffre), par exemple <b>B3</b>.</p><div class="callout">💡 <span>Le raccourci <b>Ctrl + Flèche</b> permet d'atteindre directement la fin d'une plage de données.</span></div>`},
+   {t:"Les formules essentielles",c:`<p>Toute formule commence par le signe <b>=</b>. Les fonctions les plus utiles :</p><ul><li><b>SOMME</b> : additionne une plage</li><li><b>MOYENNE</b> : calcule la moyenne</li><li><b>SI</b> : renvoie une valeur selon une condition</li><li><b>RECHERCHEX</b> : retrouve une information dans un tableau</li></ul>`},
+   {t:"Références relatives et absolues",c:`<p>Une référence relative (A1) s'adapte quand on recopie la formule. Une référence absolue ($A$1) reste fixe.</p><div class="callout">💡 <span>Appuyez sur <b>F4</b> pour basculer rapidement entre les types de références.</span></div>`},
+   {t:"Graphiques et tableaux croisés",c:`<p>Un graphique rend les données lisibles en un coup d'œil. Le tableau croisé dynamique résume de grands volumes de données sans écrire de formule.</p>`}],
+  fiches:[
+   {th:"Interface",q:"Comment repère-t-on une cellule ?",r:"Par sa colonne (lettre) puis sa ligne (chiffre), par exemple B3."},
+   {th:"Formules",q:"Par quoi commence une formule ?",r:"Par le signe égal : =."},
+   {th:"Formules",q:"À quoi sert la fonction SI ?",r:"À renvoyer une valeur différente selon qu'une condition est vraie ou fausse."},
+   {th:"Références",q:"Référence absolue",r:"$A$1 : elle ne change pas quand on recopie la formule. Touche F4 pour l'appliquer."},
+   {th:"Analyse",q:"Tableau croisé dynamique",r:"Un outil qui résume et regroupe de grands volumes de données sans formule."},
+   {th:"Interface",q:"Raccourci Ctrl + Flèche",r:"Il amène directement à la fin de la plage de données dans la direction choisie."}],
+  qcm:[
+   {q:"Par quel caractère commence une formule Excel ?",o:["#","=","$","@"],a:1,e:"Toutes les formules commencent par le signe égal."},
+   {q:"Quelle fonction calcule une moyenne ?",o:["SOMME","MOYENNE","NB","MAX"],a:1,e:"MOYENNE renvoie la moyenne arithmétique d'une plage de cellules."},
+   {q:"Que signifie $A$1 ?",o:["Une cellule en euros","Une référence absolue","Une cellule masquée","Une erreur"],a:1,e:"Les $ figent la colonne et la ligne : la référence reste fixe à la recopie."},
+   {q:"Quelle touche bascule entre les types de références ?",o:["F2","F4","F9","Échap"],a:1,e:"F4 fait défiler A1, $A$1, A$1 et $A1."},
+   {q:"Pour résumer 10 000 lignes de ventes par région, on utilise…",o:["Un tableau croisé dynamique","La fonction SI","La mise en forme conditionnelle","Le zoom"],a:0,e:"Le tableau croisé dynamique regroupe et synthétise les données en quelques clics."}]},
+ {id:"client",titre:"Relation client",emoji:"🤝",color:"#f64932",niveau:"Tous niveaux",duree:"5 h",desc:"Accueillir, écouter, gérer les réclamations et fidéliser avec les bons réflexes.",
+  chapitres:[
+   {t:"Réussir l'accueil",c:`<p>Les premières secondes conditionnent toute la relation. Un accueil réussi repose sur le sourire, la disponibilité et la reformulation de la demande.</p><div class="callout">💡 <span>Appliquez la règle des <b>4 × 20</b> : 20 premières secondes, 20 premiers mots, 20 premiers gestes, 20 centimètres du visage.</span></div>`},
+   {t:"L'écoute active",c:`<p>Écouter activement, c'est montrer à l'interlocuteur qu'il est compris : questions ouvertes, reformulation, silences respectés.</p><ul><li>Questions ouvertes pour explorer le besoin</li><li>Questions fermées pour valider</li><li>Reformulation pour vérifier la compréhension</li></ul>`},
+   {t:"Traiter une réclamation",c:`<p>Un client mécontent qui voit sa réclamation bien traitée devient souvent plus fidèle qu'avant. Méthode : écouter sans interrompre, comprendre, proposer une solution, puis vérifier la satisfaction.</p>`}],
+  fiches:[
+   {th:"Accueil",q:"La règle des 4 × 20",r:"20 secondes, 20 mots, 20 gestes, 20 centimètres : les premiers instants font l'impression."},
+   {th:"Écoute",q:"Question ouverte",r:"Une question qui invite à développer : « Comment… ? », « Que pensez-vous de… ? »."},
+   {th:"Écoute",q:"Reformuler",r:"Redire avec ses mots ce que le client a exprimé pour vérifier qu'on l'a bien compris."},
+   {th:"Réclamations",q:"Les étapes d'une réclamation",r:"Écouter, comprendre, proposer une solution, vérifier la satisfaction du client."}],
+  qcm:[
+   {q:"« Pouvez-vous me décrire votre besoin ? » est une question…",o:["Fermée","Ouverte","Alternative","Suggestive"],a:1,e:"Elle invite le client à développer sa réponse : c'est une question ouverte."},
+   {q:"Reformuler permet surtout de…",o:["Gagner du temps","Vérifier sa compréhension","Clore l'échange","Vendre plus cher"],a:1,e:"La reformulation confirme qu'on a bien compris la demande."},
+   {q:"Première étape face à une réclamation ?",o:["Proposer un geste commercial","Écouter sans interrompre","Transférer au responsable","Justifier l'entreprise"],a:1,e:"Le client doit d'abord se sentir entendu avant toute solution."},
+   {q:"La règle des 4 × 20 concerne…",o:["La gestion du temps","Les premiers instants de l'accueil","Le suivi des ventes","La rédaction d'e-mails"],a:1,e:"Elle rappelle l'importance des tout premiers instants de la rencontre."}]}
+];
+
+/* ================= STOCKAGE ================= */
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const users=()=>store.get("rv-users",{});
+const me=()=>{const e=store.get("rv-session",null);return e?{email:e,...users()[e]}:null};
+const prog=()=>{const u=me();return u?store.get("rv-prog-"+u.email,{}):{}};
+const saveProg=p=>{const u=me();if(u)store.set("rv-prog-"+u.email,p)};
+const cp=(p,id)=>(p[id]=p[id]||{done:[],known:[],quiz:[]});
+async function hash(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let tt;const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2400)};
+const pct=(c,p)=>{const x=cp(p,c.id);const tot=c.chapitres.length+1;return Math.round(((x.done.length)+(x.quiz.length?1:0))/tot*100)};
+const best=(c,p)=>{const q=cp(p,c.id).quiz;return q.length?Math.max(...q.map(r=>Math.round(r.s/r.t*100))):null};
+const cls=v=>v>=80?"g":v>=50?"m":"b";
+
+/* ================= NAV ================= */
+function nav(route){
+  const u=me(),inApp=!!u&&route!=="home";
+  document.body.classList.toggle("in-app",!!u);
+  $("#links").innerHTML=u
+    ?[["#/tableau","Tableau de bord","tableau"],["#/formations","Formations","formations"],["#/resultats","Résultats","resultats"]].map(([h,l,r])=>`<a href="${h}" class="${route===r?"on":""}">${l}</a>`).join("")
+    :`<a href="#/" >Accueil</a><a href="#/fonctionnalites">Fonctionnalités</a><a href="#/formations-public">Formations</a><a href="#/faq">FAQ</a>`;
+  $("#navR").innerHTML=u
+    ?`<button class="btn btn-t small hide-m" id="logout">Se déconnecter</button><button class="avatar" id="av" title="${esc(u.name)}">${esc(u.name[0].toUpperCase())}</button>`
+    :`<a class="btn btn-t hide-m" href="#/connexion">Se connecter</a><a class="btn btn-p" href="#/inscription">Commencer</a>`;
+  $("#tabbar").innerHTML=u?[["#/tableau","🏠","Accueil","tableau"],["#/formations","📚","Formations","formations"],["#/resultats","📈","Résultats","resultats"],["#/profil","👤","Profil","profil"]].map(([h,i,l,r])=>`<a href="${h}" class="${route===r?"on":""}"><span>${i}</span>${l}</a>`).join(""):"";
+  const lo=$("#logout");if(lo)lo.onclick=logout;const av=$("#av");if(av)av.onclick=()=>location.hash="#/profil";
+}
+function logout(){store.set("rv-session",null);toast("Vous êtes déconnecté");location.hash="#/"}
+
+/* ================= VUES ================= */
+function home(scrollTo){
+  $("#view").innerHTML=`
+  <section class="hero wrap">
+    <span class="pill">✨ Formation en ligne · ordinateur & mobile</span>
+    <h1 class="dl">Apprenez, révisez, <span class="hl">progressez.</span></h1>
+    <p class="serif">Des formations claires, des fiches de révision par thème et des QCM corrigés pour vérifier vos acquis. Votre progression est suivie automatiquement, à votre rythme.</p>
+    <div class="hero-cta"><a class="btn btn-p" href="#/inscription">Créer mon compte gratuit</a><a class="btn btn-o" href="#/demo">Essayer sans compte</a></div>
+    <div class="mock" aria-hidden="true">
+      <div class="mock-side"><span class="on">🏠 Tableau de bord</span><span>📚 Formations</span><span>🗂️ Fiches</span><span>✅ QCM</span><span>📈 Résultats</span></div>
+      <div class="mock-main">
+        <div class="mock-tile" style="background:#ffb110"><span>Progression</span><b>68 %</b></div>
+        <div class="mock-tile" style="background:#e6f3fe"><span>QCM réussis</span><b>14</b></div>
+        <div class="mock-tile" style="background:#02093a;color:#fff"><span>Score moyen</span><b>82 %</b></div>
+        <div class="mock-q"><b>Que signifie le « M » de SMART ?</b><div>A. Motivant</div><div class="ok">✓ B. Mesurable — bonne réponse</div><div>C. Modulable</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec wrap" id="fonctionnalites">
+    <div class="sec-h"><h2 class="d2">Tout pour apprendre efficacement</h2><p class="serif">Une plateforme pensée pour les apprenants comme pour les formateurs.</p></div>
+    <div class="feats">
+      <div class="card feat"><div class="ico" style="background:var(--sky)">👤</div><h3 class="h3">Espace personnel</h3><p class="muted">Chaque apprenant a son compte, ses formations et son historique, accessibles partout.</p></div>
+      <div class="card feat accent" style="background:var(--marigold)"><div class="ico" style="background:rgba(255,255,255,.5)">📚</div><h3 class="h3">Formations & contenus</h3><p>Des cours découpés en chapitres courts, avec les points clés à retenir.</p></div>
+      <div class="card feat"><div class="ico" style="background:#fff4dc">🗂️</div><h3 class="h3">Fiches par thèmes</h3><p class="muted">Des fiches recto-verso à retourner, classées par thème, pour mémoriser l'essentiel.</p></div>
+      <div class="card feat accent" style="background:var(--midnight);color:#fff"><div class="ico" style="background:rgba(255,255,255,.12)">✅</div><h3 class="h3" style="color:#fff">QCM corrigés</h3><p style="color:rgba(255,255,255,.75)">Correction immédiate et explication à chaque question pour comprendre ses erreurs.</p></div>
+      <div class="card feat"><div class="ico" style="background:var(--okbg)">📈</div><h3 class="h3">Suivi de progression</h3><p class="muted">Scores, historique et pourcentage d'avancement par formation, mis à jour en direct.</p></div>
+      <div class="card feat accent" style="background:var(--skywash)"><div class="ico" style="background:rgba(255,255,255,.5)">📱</div><h3 class="h3">Ordinateur & mobile</h3><p>Une interface fluide sur tous les écrans, avec une navigation dédiée sur téléphone.</p></div>
+    </div>
+  </section>
+  <section class="sec wrap" id="formations-public">
+    <div class="sec-h"><h2 class="d2">Nos formations</h2><p class="serif">Un catalogue qui s'enrichit au fil du temps.</p></div>
+    <div class="courses">${COURSES.map(c=>`<a class="card course" href="#/inscription"><div class="course-top" style="background:${c.color}">${c.emoji}</div><div class="row"><span class="pill" style="background:var(--paper)">${c.niveau}</span><span class="cap">${c.duree} · ${c.chapitres.length} chapitres</span></div><h3 class="h3">${c.titre}</h3><p class="muted small">${c.desc}</p></a>`).join("")}</div>
+  </section>
+  <section class="sec wrap">
+    <div class="sec-h"><h2 class="d2">Comment ça marche ?</h2></div>
+    <div class="steps">
+      <div class="card step"><h3 class="h3">Créez votre compte</h3><p class="muted small" style="margin-top:8px">En 30 secondes, avec votre nom et votre e-mail.</p></div>
+      <div class="card step"><h3 class="h3">Suivez le cours</h3><p class="muted small" style="margin-top:8px">Des chapitres courts, à lire où vous voulez.</p></div>
+      <div class="card step"><h3 class="h3">Révisez</h3><p class="muted small" style="margin-top:8px">Retournez les fiches et marquez celles que vous maîtrisez.</p></div>
+      <div class="card step"><h3 class="h3">Testez-vous</h3><p class="muted small" style="margin-top:8px">Passez le QCM et suivez vos scores dans le temps.</p></div>
+    </div>
+  </section>
+  <section class="sec wrap" id="faq">
+    <div class="band"><div><h2 class="d2">Prêt à commencer ?</h2><p>Créez votre compte et lancez votre première formation dès maintenant.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-w" href="#/inscription">Créer mon compte</a><a class="btn" style="color:#fff;border-color:rgba(255,255,255,.4)" href="#/demo">Essayer la démo</a></div></div>
+    <div class="faq" style="max-width:820px;margin:64px auto 0">
+      <h2 class="d2" style="margin-bottom:16px">Questions fréquentes</h2>
+      <details><summary>Puis-je réviser sur mon téléphone ?</summary><p>Oui. La plateforme s'adapte à tous les écrans, avec une barre de navigation dédiée sur mobile.</p></details>
+      <details><summary>Mes résultats sont-ils enregistrés ?</summary><p>Oui, chaque QCM est enregistré dans votre espace avec la date et le score, pour suivre votre progression.</p></details>
+      <details><summary>Peut-on ajouter de nouvelles formations ?</summary><p>Oui, la plateforme est conçue pour accueillir de nouveaux cours, fiches et QCM, ainsi que de nouvelles fonctionnalités (certificats, espace formateur, vidéos…).</p></details>
+      <details><summary>Combien de temps faut-il pour une formation ?</summary><p>Chaque formation indique sa durée estimée. Vous avancez à votre rythme et reprenez là où vous vous êtes arrêté.</p></details>
+    </div>
+  </section>
+  <footer><div class="wrap foot"><span>© 2026 Révisio · Plateforme de formation</span><span>Mentions légales · Confidentialité · Contact</span></div></footer>`;
+  if(scrollTo){const el=document.getElementById(scrollTo);if(el)el.scrollIntoView()}else scrollTo0();
+}
+const scrollTo0=()=>window.scrollTo(0,0);
+
+function auth(mode){
+  const reg=mode==="inscription";
+  $("#view").innerHTML=`<section class="auth"><form class="card" id="af" novalidate>
+    <h1>${reg?"Créer mon compte":"Bon retour 👋"}</h1><p class="muted small">${reg?"Accédez à vos formations, fiches et QCM.":"Connectez-vous pour reprendre votre progression."}</p>
+    ${reg?`<label class="fld">Prénom<input name="name" autocomplete="given-name" required></label>`:""}
+    <label class="fld">E-mail<input name="email" type="email" autocomplete="email" required></label>
+    <label class="fld">Mot de passe<input name="pw" type="password" autocomplete="${reg?"new-password":"current-password"}" minlength="6" required></label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn btn-p" style="width:100%;margin-top:4px" type="submit">${reg?"Créer mon compte":"Se connecter"}</button>
+    <p class="switch">${reg?`Déjà inscrit ? <a href="#/connexion">Se connecter</a>`:`Pas encore de compte ? <a href="#/inscription">Créer un compte</a>`}</p>
+  </form></section>`;
+  $("#af").onsubmit=async e=>{e.preventDefault();const f=e.target,em=f.email.value.trim().toLowerCase(),pw=f.pw.value,err=$("#err");
+    if(reg&&!f.name.value.trim())return err.textContent="Indiquez votre prénom.";
+    if(!/^\S+@\S+\.\S+$/.test(em))return err.textContent="Adresse e-mail invalide.";
+    if(pw.length<6)return err.textContent="Le mot de passe doit contenir au moins 6 caractères.";
+    const all=users(),h=await hash(em+":"+pw);
+    if(reg){if(all[em])return err.textContent="Un compte existe déjà avec cet e-mail.";all[em]={name:f.name.value.trim(),h,since:Date.now()};store.set("rv-users",all)}
+    else if(!all[em]||all[em].h!==h)return err.textContent="E-mail ou mot de passe incorrect.";
+    store.set("rv-session",em);toast(reg?"Compte créé, bienvenue !":"Connexion réussie");location.hash="#/tableau"};
+  scrollTo0();
+}
+
+async function demo(){const all=users(),em="demo@revisio.fr";
+  if(!all[em]){all[em]={name:"Camille",h:await hash(em+":demo123"),since:Date.now()};store.set("rv-users",all);
+    const d=Date.now(),day=864e5;store.set("rv-prog-"+em,{projet:{done:[0,1,2],known:[0,1,3],quiz:[{s:3,t:6,d:d-6*day},{s:4,t:6,d:d-4*day},{s:5,t:6,d:d-2*day}]},excel:{done:[0],known:[1],quiz:[{s:3,t:5,d:d-day}]},client:{done:[],known:[],quiz:[]}})}
+  store.set("rv-session",em);toast("Vous explorez le compte de démonstration");location.hash="#/tableau"}
+
+function guard(){if(!me()){location.hash="#/connexion";return false}return true}
+
+function dashboard(){
+  const u=me(),p=prog();
+  const allQ=COURSES.flatMap(c=>cp(p,c.id).quiz.map(r=>({...r,c})) ).sort((a,b)=>a.d-b.d);
+  const avg=allQ.length?Math.round(allQ.reduce((s,r)=>s+r.s/r.t,0)/allQ.length*100):0;
+  const glob=Math.round(COURSES.reduce((s,c)=>s+pct(c,p),0)/COURSES.length);
+  const known=COURSES.reduce((s,c)=>s+cp(p,c.id).known.length,0);
+  const next=COURSES.find(c=>pct(c,p)>0&&pct(c,p)<100)||COURSES.find(c=>pct(c,p)<100)||COURSES[0];
+  const last=allQ.slice(-8);
+  $("#view").innerHTML=`<section class="app wrap">
+    <div class="app-h"><div><p class="cap">TABLEAU DE BORD</p><h1>Bonjour ${esc(u.name)} 👋</h1></div><a class="btn btn-p" href="#/formation/${next.id}">${pct(next,p)?"Reprendre":"Commencer"} : ${next.titre}</a></div>
+    <div class="stats">
+      <div class="stat" style="background:var(--marigold)"><span>Progression globale</span><b>${glob} %</b></div>
+      <div class="stat" style="background:var(--sky)"><span>QCM réalisés</span><b>${allQ.length}</b></div>
+      <div class="stat" style="background:var(--midnight);color:#fff"><span>Score moyen</span><b>${allQ.length?avg+" %":"—"}</b></div>
+      <div class="stat card" style="padding:20px"><span>Fiches maîtrisées</span><b>${known}</b></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><div class="row"><h2 class="h3">Mes formations</h2><a class="small" style="color:var(--blue);font-weight:500" href="#/formations">Tout voir</a></div>
+        <div class="list" style="margin-top:8px">${COURSES.map(c=>`<a href="#/formation/${c.id}" style="display:grid;grid-template-columns:44px 1fr auto;gap:12px"><span style="width:44px;height:44px;border-radius:10px;background:${c.color};display:grid;place-items:center;font-size:20px">${c.emoji}</span><span><b>${c.titre}</b><div class="bar" style="margin-top:8px"><i style="width:${pct(c,p)}%"></i></div></span><span class="cap">${pct(c,p)} %</span></a>`).join("")}</div></div>
+      <div class="card"><h2 class="h3">Mes derniers scores</h2>
+        ${last.length?`<div class="chart">${last.map(r=>{const v=Math.round(r.s/r.t*100);return `<div title="${r.c.titre} : ${v} %"><b style="font-size:11px;color:var(--ink)">${v}%</b><i class="${v>=80?"good":""}" style="height:${Math.max(v,6)}%"></i>${r.c.emoji}</div>`}).join("")}</div>`:`<p class="empty">Passez votre premier QCM pour voir vos scores ici.</p>`}
+      </div>
+    </div>
+  </section>`;scrollTo0();
+}
+
+function catalogue(){const p=prog();
+  $("#view").innerHTML=`<section class="app wrap"><div class="app-h"><div><p class="cap">CATALOGUE</p><h1>Formations</h1></div></div>
+  <div class="courses">${COURSES.map(c=>{const b=best(c,p);return `<a class="card course" href="#/formation/${c.id}"><div class="course-top" style="background:${c.color}">${c.emoji}</div><div class="row"><span class="pill" style="background:var(--paper)">${c.niveau}</span><span class="cap">${c.duree}</span></div><h3 class="h3">${c.titre}</h3><p class="muted small">${c.desc}</p><div class="bar"><i style="width:${pct(c,p)}%"></i></div><div class="row small"><span class="muted">${pct(c,p)} % terminé</span>${b!==null?`<span class="score ${cls(b)}">Meilleur : ${b} %</span>`:""}</div></a>`}).join("")}</div></section>`;scrollTo0();
+}
+
+let cur={c:null,tab:"cours",chap:0,theme:"Tous",qi:0,ans:[]};
+function course(id,tab){
+  const c=COURSES.find(x=>x.id===id);if(!c){location.hash="#/formations";return}
+  if(cur.c!==c){cur={c,tab:"cours",chap:0,theme:"Tous",qi:0,ans:[]}}
+  if(tab)cur.tab=tab;
+  const p=prog();
+  $("#view").innerHTML=`<section class="app wrap">
+    <a href="#/formations" class="small muted">← Formations</a>
+    <div class="app-h" style="margin-top:12px"><div style="display:flex;gap:16px;align-items:center"><span style="width:56px;height:56px;border-radius:12px;background:${c.color};display:grid;place-items:center;font-size:28px;flex:none">${c.emoji}</span><div><h1>${c.titre}</h1><p class="muted small">${c.niveau} · ${c.duree} · ${pct(c,p)} % terminé</p></div></div></div>
+    <div class="tabs" role="tablist">${[["cours","📖 Cours"],["fiches","🗂️ Fiches de révision"],["qcm","✅ QCM"]].map(([k,l])=>`<button class="tab" role="tab" aria-selected="${cur.tab===k}" data-tab="${k}">${l}</button>`).join("")}</div>
+    <div id="pane"></div></section>`;
+  document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>{cur.tab=b.dataset.tab;if(cur.tab==="qcm"){cur.qi=0;cur.ans=[]}course(id)});
+  ({cours:paneCours,fiches:paneFiches,qcm:paneQcm})[cur.tab](c);
+}
+function paneCours(c){const p=prog(),x=cp(p,c.id),ch=c.chapitres[cur.chap];
+  $("#pane").innerHTML=`<div class="chap"><div class="chap-list">${c.chapitres.map((h,i)=>`<button data-ch="${i}" aria-current="${i===cur.chap}"><span class="chk ${x.done.includes(i)?"on":""}">${x.done.includes(i)?"✓":i+1}</span>${h.t}</button>`).join("")}</div>
+  <article class="card lesson"><p class="cap">CHAPITRE ${cur.chap+1} / ${c.chapitres.length}</p><h2 style="margin-top:6px">${ch.t}</h2>${ch.c}
+  <div class="row" style="margin-top:24px;flex-wrap:wrap"><button class="btn btn-t" id="prev" ${cur.chap===0?"disabled style='visibility:hidden'":""}>← Précédent</button>
+  <button class="btn btn-p" id="done">${cur.chap<c.chapitres.length-1?"Terminé, chapitre suivant →":"Terminé, réviser les fiches →"}</button></div></article></div>`;
+  document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{cur.chap=+b.dataset.ch;paneCours(c)});
+  $("#prev").onclick=()=>{cur.chap--;paneCours(c)};
+  $("#done").onclick=()=>{const p=prog(),x=cp(p,c.id);if(!x.done.includes(cur.chap))x.done.push(cur.chap);saveProg(p);
+    if(cur.chap<c.chapitres.length-1){cur.chap++;course(c.id)}else{toast("Cours terminé ! Place à la révision.");course(c.id,"fiches")}window.scrollTo({top:0,behavior:"smooth"})};
+}
+function paneFiches(c){const p=prog(),x=cp(p,c.id),themes=["Tous",...new Set(c.fiches.map(f=>f.th))];
+  const list=c.fiches.map((f,i)=>({...f,i})).filter(f=>cur.theme==="Tous"||f.th===cur.theme);
+  $("#pane").innerHTML=`<div class="row" style="flex-wrap:wrap;margin-bottom:4px"><p class="muted small">Touchez une fiche pour la retourner. ${x.known.length}/${c.fiches.length} maîtrisées.</p><button class="btn btn-g" id="toQ">Je me teste au QCM →</button></div>
+  <div class="themes" style="margin-top:14px">${themes.map(t=>`<button aria-pressed="${t===cur.theme}" data-th="${esc(t)}">${t}</button>`).join("")}</div>
+  <div class="flash">${list.map(f=>`<div><button class="fc" data-fc aria-label="Fiche : ${esc(f.q)}"><div class="fc-in"><div class="fc-f">${x.known.includes(f.i)?`<span class="known">✓ Maîtrisée</span>`:""}<small>${f.th}</small><strong>${f.q}</strong><small>Toucher pour voir la réponse ↻</small></div><div class="fc-b"><small>Réponse</small><span>${f.r}</span><small>Toucher pour revenir ↻</small></div></div></button>
+  <button class="btn ${x.known.includes(f.i)?"btn-g":"btn-t"} small" style="margin-top:8px;width:100%" data-k="${f.i}">${x.known.includes(f.i)?"✓ Je maîtrise":"Marquer comme maîtrisée"}</button></div>`).join("")}</div>`;
+  document.querySelectorAll("[data-th]").forEach(b=>b.onclick=()=>{cur.theme=b.dataset.th;paneFiches(c)});
+  document.querySelectorAll("[data-fc]").forEach(b=>b.onclick=()=>b.classList.toggle("flip"));
+  document.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{const p=prog(),x=cp(p,c.id),k=+b.dataset.k;x.known=x.known.includes(k)?x.known.filter(v=>v!==k):[...x.known,k];saveProg(p);paneFiches(c)});
+  $("#toQ").onclick=()=>{cur.qi=0;cur.ans=[];course(c.id,"qcm")};
+}
+function paneQcm(c){
+  if(cur.qi>=c.qcm.length)return qcmResult(c);
+  const q=c.qcm[cur.qi],a=cur.ans[cur.qi];
+  $("#pane").innerHTML=`<div class="quiz card"><div class="q-top"><span>Question ${cur.qi+1} / ${c.qcm.length}</span><span>${cur.ans.filter((v,i)=>v===c.qcm[i].a).length} bonne(s) réponse(s)</span></div>
+  <div class="bar"><i style="width:${cur.qi/c.qcm.length*100}%"></i></div>
+  <p class="q-text">${q.q}</p>
+  <div class="opts">${q.o.map((o,i)=>`<button class="opt ${a!==undefined?(i===q.a?"ok":i===a?"ko":""):""}" data-o="${i}" ${a!==undefined?"disabled":""}><b>${"ABCD"[i]}</b><span>${o}</span></button>`).join("")}</div>
+  <div class="explain ${a!==undefined?"on":""}">${a===q.a?"✅ <b>Bonne réponse !</b> ":"❌ <b>Pas tout à fait.</b> La bonne réponse est <b>"+"ABCD"[q.a]+"</b>. "}${q.e}</div>
+  <div class="q-nav">${a!==undefined?`<button class="btn btn-p" id="nq">${cur.qi<c.qcm.length-1?"Question suivante →":"Voir mon résultat"}</button>`:""}</div></div>`;
+  document.querySelectorAll("[data-o]").forEach(b=>b.onclick=()=>{cur.ans[cur.qi]=+b.dataset.o;paneQcm(c)});
+  const n=$("#nq");if(n){n.onclick=()=>{cur.qi++;if(cur.qi>=c.qcm.length){const p=prog(),x=cp(p,c.id);x.quiz.push({s:cur.ans.filter((v,i)=>v===c.qcm[i].a).length,t:c.qcm.length,d:Date.now()});saveProg(p)}paneQcm(c)};n.focus()}
+}
+function qcmResult(c){const s=cur.ans.filter((v,i)=>v===c.qcm[i].a).length,t=c.qcm.length,v=Math.round(s/t*100),R=64,L=2*Math.PI*R;
+  const col=v>=80?"var(--ok)":v>=50?"var(--marigold)":"var(--coral)";
+  $("#pane").innerHTML=`<div class="quiz card result"><div class="ring"><svg width="150" height="150"><circle cx="75" cy="75" r="${R}" stroke="rgba(0,0,0,.07)" stroke-width="12" fill="none"/><circle cx="75" cy="75" r="${R}" stroke="${col}" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="${L}" stroke-dashoffset="${L*(1-v/100)}"/></svg><b>${v} %</b></div>
+  <h2 class="h3">${v>=80?"Excellent travail ! 🎉":v>=50?"C'est en bonne voie 💪":"Encore un petit effort 📚"}</h2><p class="muted">${s} bonne(s) réponse(s) sur ${t}. Votre score est enregistré dans vos résultats.</p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px"><button class="btn btn-p" id="again">Recommencer le QCM</button><button class="btn btn-o" id="rev">Revoir les fiches</button></div>
+  <div class="recap">${c.qcm.map((q,i)=>`<div><span>${cur.ans[i]===q.a?"✅":"❌"}</span><span><b>${q.q}</b><br><span class="muted">Réponse : ${q.o[q.a]}</span></span></div>`).join("")}</div></div>`;
+  $("#again").onclick=()=>{cur.qi=0;cur.ans=[];paneQcm(c)};$("#rev").onclick=()=>course(c.id,"fiches");
+}
+function results(){const p=prog();const all=COURSES.flatMap(c=>cp(p,c.id).quiz.map(r=>({...r,c}))).sort((a,b)=>b.d-a.d);
+  $("#view").innerHTML=`<section class="app wrap"><div class="app-h"><div><p class="cap">SUIVI</p><h1>Mes résultats</h1></div></div>
+  <div class="grid2"><div class="card"><h2 class="h3">Historique des QCM</h2><div class="list" style="margin-top:8px">${all.length?all.map(r=>{const v=Math.round(r.s/r.t*100);return `<div><span>${r.c.emoji} <b>${r.c.titre}</b><br><span class="cap">${new Date(r.d).toLocaleDateString("fr-FR",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})} · ${r.s}/${r.t}</span></span><span class="score ${cls(v)}">${v} %</span></div>`}).join(""):`<p class="empty">Aucun QCM pour l'instant. <a href="#/formations" style="color:var(--blue)">Choisir une formation</a></p>`}</div></div>
+  <div class="card"><h2 class="h3">Par formation</h2><div class="list" style="margin-top:8px">${COURSES.map(c=>{const b=best(c,p),x=cp(p,c.id);return `<a href="#/formation/${c.id}"><span>${c.emoji} <b>${c.titre}</b><br><span class="cap">${x.done.length}/${c.chapitres.length} chapitres · ${x.known.length}/${c.fiches.length} fiches · ${x.quiz.length} QCM</span></span>${b!==null?`<span class="score ${cls(b)}">${b} %</span>`:`<span class="cap">—</span>`}</a>`}).join("")}</div></div></div></section>`;scrollTo0();
+}
+function profil(){const u=me();
+  $("#view").innerHTML=`<section class="app wrap"><div class="app-h"><div><p class="cap">COMPTE</p><h1>Mon profil</h1></div></div>
+  <div class="card" style="max-width:520px"><div style="display:flex;gap:16px;align-items:center"><span class="avatar" style="width:56px;height:56px;font-size:22px">${esc(u.name[0].toUpperCase())}</span><div><b style="font-size:20px">${esc(u.name)}</b><p class="muted small">${esc(u.email)}</p></div></div>
+  <p class="muted small" style="margin-top:16px">Membre depuis le ${new Date(u.since).toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"})}</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><button class="btn btn-o" id="reset">Réinitialiser ma progression</button><button class="btn btn-t" id="lo2">Se déconnecter</button></div></div></section>`;
+  $("#lo2").onclick=logout;$("#reset").onclick=()=>{saveProg({});toast("Progression réinitialisée");};scrollTo0();
+}
+
+/* ================= ROUTEUR ================= */
+function route(){const h=location.hash.replace(/^#\/?/,"").split("/");const r=h[0]||"home";
+  const pub={home:()=>home(),fonctionnalites:()=>home("fonctionnalites"),"formations-public":()=>home("formations-public"),faq:()=>home("faq"),connexion:()=>auth("connexion"),inscription:()=>auth("inscription"),demo};
+  const priv={tableau:dashboard,formations:catalogue,formation:()=>course(h[1],h[2]),resultats:results,profil};
+  if(pub[r]){if(me()&&(r==="connexion"||r==="inscription")){location.hash="#/tableau";return}nav(r==="home"?"home":r);pub[r]()}
+  else if(priv[r]){if(!guard())return;nav(r==="formation"?"formations":r);priv[r]()}
+  else{location.hash="#/"}
+}
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
