@@ -8,6 +8,9 @@
 <meta name="theme-color" content="#f6f5f4">
 <meta property="og:title" content="Révisio — Formez-vous et révisez à votre rythme">
 <meta property="og:description" content="Cours, fiches de révision, QCM corrigés et suivi de progression.">
+<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=630&fit=crop&q=80">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Révisio","description":"Organisme de formation : cours en ligne, fiches de révision par thème, QCM corrigés et suivi de progression.","telephone":"+33641478339","email":"contact@revisio.fr","url":"https://kevinhadad36.github.io/revisio-formation/","hasOfferCatalog":{"@type":"OfferCatalog","name":"Formations","itemListElement":[{"@type":"Course","name":"Gestion de projet"},{"@type":"Course","name":"Bureautique : Excel"},{"@type":"Course","name":"Relation client"}]}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
 <style>
@@ -55,7 +58,7 @@ h1,h2,h3{font-weight:600;color:var(--ink)}
 .avatar{width:36px;height:36px;border-radius:50%;background:var(--marigold);display:grid;place-items:center;font-weight:700;font-size:14px;border:0;cursor:pointer}
 
 /* landing */
-.hero{padding:clamp(48px,8vw,96px) 0 clamp(40px,6vw,72px);text-align:center}
+.hero{padding-top:clamp(48px,8vw,96px);padding-bottom:clamp(40px,6vw,72px);text-align:center}
 .hero .pill{background:var(--marigold);margin-bottom:24px}
 .hero h1{max-width:13ch;margin:0 auto}
 .hero p{max-width:620px;margin:24px auto 32px}
@@ -69,7 +72,7 @@ h1,h2,h3{font-weight:600;color:var(--ink)}
 .mock-q{grid-column:1/-1;border:1px solid var(--line);border-radius:10px;padding:16px;font-size:14px}
 .mock-q div{margin-top:8px;padding:8px 10px;border:1px solid var(--line);border-radius:6px}
 .mock-q div.ok{background:var(--okbg);border-color:#9fd8b5}
-.sec{padding:clamp(56px,8vw,80px) 0}
+.sec{padding-top:clamp(56px,8vw,80px);padding-bottom:clamp(56px,8vw,80px)}
 .sec-h{text-align:center;max-width:720px;margin:0 auto 40px}
 .sec-h p{margin-top:14px}
 .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -87,6 +90,19 @@ h1,h2,h3{font-weight:600;color:var(--ink)}
 .faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--stone)}
 .faq details[open] summary::after{content:"–"}
 .faq p{margin-top:10px;color:var(--graphite)}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.who-c{padding:0;overflow:hidden;margin:0}
+.who-c img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.who-c figcaption{padding:20px 22px 24px;display:grid;gap:8px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.about-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:#e9e7e4}
+.about-img img{width:100%;height:100%;object-fit:cover;display:block}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.proof div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:4px}
+.proof b{font-size:26px;letter-spacing:-.03em}.proof span{font-size:13px;color:var(--graphite)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.contact .list>*{font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 footer{border-top:1px solid var(--line);padding:32px 0 calc(32px + env(safe-area-inset-bottom));font-size:14px;color:var(--stone)}
 .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
@@ -190,7 +206,9 @@ footer{border-top:1px solid var(--line);padding:32px 0 calc(32px + env(safe-area
 @media (max-width:960px){
   .feats,.courses,.flash{grid-template-columns:1fr 1fr}
   .steps,.stats{grid-template-columns:1fr 1fr}
-  .grid2,.band{grid-template-columns:1fr}
+  .grid2,.band,.about,.contact{grid-template-columns:1fr}
+  .who{grid-template-columns:1fr 1fr}
+  .about-img{aspect-ratio:16/10}
   .chap{grid-template-columns:1fr}
   .chap-list{position:static;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;scrollbar-width:none}
   .mock{grid-template-columns:1fr}.mock-side{display:none}
@@ -202,7 +220,8 @@ footer{border-top:1px solid var(--line);padding:32px 0 calc(32px + env(safe-area
   .nav-r .hide-m{display:none}
 }
 @media (max-width:560px){
-  .feats,.courses,.flash,.steps{grid-template-columns:1fr}
+  .feats,.courses,.flash,.steps,.who,.two{grid-template-columns:1fr}
+  .proof{grid-template-columns:1fr}
   .mock-main{grid-template-columns:1fr 1fr}.mock-tile:nth-child(3){display:none}
   .hero-cta .btn{flex:1}
   .stat b{font-size:28px}
@@ -301,7 +320,7 @@ function nav(route){
   document.body.classList.toggle("in-app",!!u);
   $("#links").innerHTML=u
     ?[["#/tableau","Tableau de bord","tableau"],["#/formations","Formations","formations"],["#/resultats","Résultats","resultats"]].map(([h,l,r])=>`<a href="${h}" class="${route===r?"on":""}">${l}</a>`).join("")
-    :`<a href="#/" >Accueil</a><a href="#/fonctionnalites">Fonctionnalités</a><a href="#/formations-public">Formations</a><a href="#/faq">FAQ</a>`;
+    :`<a href="#/" >Accueil</a><a href="#/fonctionnalites">Fonctionnalités</a><a href="#/formations-public">Formations</a><a href="#/faq">FAQ</a><a href="#/contact">Contact</a>`;
   $("#navR").innerHTML=u
     ?`<button class="btn btn-t small hide-m" id="logout">Se déconnecter</button><button class="avatar" id="av" title="${esc(u.name)}">${esc(u.name[0].toUpperCase())}</button>`
     :`<a class="btn btn-t hide-m" href="#/connexion">Se connecter</a><a class="btn btn-p" href="#/inscription">Commencer</a>`;
@@ -344,7 +363,7 @@ function home(scrollTo){
     <div class="courses">${COURSES.map(c=>`<a class="card course" href="#/inscription"><div class="course-top" style="background:${c.color}">${c.emoji}</div><div class="row"><span class="pill" style="background:var(--paper)">${c.niveau}</span><span class="cap">${c.duree} · ${c.chapitres.length} chapitres</span></div><h3 class="h3">${c.titre}</h3><p class="muted small">${c.desc}</p></a>`).join("")}</div>
   </section>
   <section class="sec wrap">
-    <div class="sec-h"><h2 class="d2">Comment ça marche ?</h2></div>
+    <div class="sec-h"><h2 class="d2">Comment ça marche&nbsp;?</h2></div>
     <div class="steps">
       <div class="card step"><h3 class="h3">Créez votre compte</h3><p class="muted small" style="margin-top:8px">En 30 secondes, avec votre nom et votre e-mail.</p></div>
       <div class="card step"><h3 class="h3">Suivez le cours</h3><p class="muted small" style="margin-top:8px">Des chapitres courts, à lire où vous voulez.</p></div>
@@ -352,8 +371,31 @@ function home(scrollTo){
       <div class="card step"><h3 class="h3">Testez-vous</h3><p class="muted small" style="margin-top:8px">Passez le QCM et suivez vos scores dans le temps.</p></div>
     </div>
   </section>
+  <section class="sec wrap" id="pourqui">
+    <div class="sec-h"><h2 class="d2">Pour qui&nbsp;?</h2><p class="serif">Une même plateforme pour apprendre seul, en groupe ou en entreprise.</p></div>
+    <div class="who">
+      <figure class="card who-c"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&q=80&auto=format&fit=crop" alt="Apprenant qui prend des notes à son bureau" loading="lazy"><figcaption><h3 class="h3">Apprenants</h3><p class="muted small">Préparez un examen, une certification ou une reconversion, à votre rythme, où que vous soyez.</p></figcaption></figure>
+      <figure class="card who-c"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80&auto=format&fit=crop" alt="Groupe d'apprenants qui révisent ensemble sur ordinateur" loading="lazy"><figcaption><h3 class="h3">Groupes & sessions</h3><p class="muted small">Prolongez vos sessions en présentiel avec des fiches et des QCM accessibles après la formation.</p></figcaption></figure>
+      <figure class="card who-c"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&auto=format&fit=crop" alt="Atelier de formation en entreprise" loading="lazy"><figcaption><h3 class="h3">Entreprises</h3><p class="muted small">Formez vos équipes et suivez leur progression grâce aux résultats de chaque collaborateur.</p></figcaption></figure>
+    </div>
+  </section>
+  <section class="sec wrap" id="organisme">
+    <div class="about">
+      <div class="about-img"><img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1200&q=80&auto=format&fit=crop" alt="Espace de révision avec ordinateur portable et cahier" loading="lazy"></div>
+      <div>
+        <span class="pill" style="background:var(--sky);color:var(--blue)">L'organisme</span>
+        <h2 class="d2" style="margin:16px 0">Une formation qui ne s'arrête pas à la fin du cours.</h2>
+        <p class="serif">Nous concevons des parcours clairs et concrets, puis nous accompagnons chaque apprenant dans ses révisions jusqu'à la réussite. Les contenus sont rédigés par des formateurs expérimentés et mis à jour régulièrement.</p>
+        <div class="proof">
+          <div><b>24 h/24</b><span>Accès aux cours et aux révisions</span></div>
+          <div><b>100 %</b><span>Des QCM corrigés et expliqués</span></div>
+          <div><b>1</b><span>Formateur référent pour vos questions</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="sec wrap" id="faq">
-    <div class="band"><div><h2 class="d2">Prêt à commencer ?</h2><p>Créez votre compte et lancez votre première formation dès maintenant.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-w" href="#/inscription">Créer mon compte</a><a class="btn" style="color:#fff;border-color:rgba(255,255,255,.4)" href="#/demo">Essayer la démo</a></div></div>
+    <div class="band"><div><h2 class="d2">Prêt à commencer&nbsp;?</h2><p>Créez votre compte et lancez votre première formation dès maintenant.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-w" href="#/inscription">Créer mon compte</a><a class="btn" style="color:#fff;border-color:rgba(255,255,255,.4)" href="#/demo">Essayer la démo</a></div></div>
     <div class="faq" style="max-width:820px;margin:64px auto 0">
       <h2 class="d2" style="margin-bottom:16px">Questions fréquentes</h2>
       <details><summary>Puis-je réviser sur mon téléphone ?</summary><p>Oui. La plateforme s'adapte à tous les écrans, avec une barre de navigation dédiée sur mobile.</p></details>
@@ -362,7 +404,30 @@ function home(scrollTo){
       <details><summary>Combien de temps faut-il pour une formation ?</summary><p>Chaque formation indique sa durée estimée. Vous avancez à votre rythme et reprenez là où vous vous êtes arrêté.</p></details>
     </div>
   </section>
-  <footer><div class="wrap foot"><span>© 2026 Révisio · Plateforme de formation</span><span>Mentions légales · Confidentialité · Contact</span></div></footer>`;
+  <section class="sec wrap" id="contact">
+    <div class="contact">
+      <div>
+        <h2 class="d2">Une question&nbsp;? Parlons-en.</h2>
+        <p class="serif" style="margin:14px 0 24px">Inscription, financement de votre parcours par votre entreprise, formation sur mesure : nous vous répondons rapidement.</p>
+        <div class="list">
+          <a href="tel:+33641478339"><span>📞 Téléphone</span><b>06 41 47 83 39</b></a>
+          <div><span>✉️ E-mail</span><b>contact@revisio.fr</b></div>
+          <div><span>🕘 Horaires</span><b>Lun – Ven, 9h – 18h</b></div>
+        </div>
+      </div>
+      <form class="card" id="cf" novalidate>
+        <label class="fld">Vous êtes<select name="who"><option>Apprenant</option><option>Entreprise</option><option>Formateur</option><option>Autre</option></select></label>
+        <div class="two"><label class="fld">Nom<input name="n" autocomplete="name" required></label><label class="fld">Téléphone<input name="t" type="tel" autocomplete="tel"></label></div>
+        <label class="fld">E-mail<input name="e" type="email" autocomplete="email" required></label>
+        <label class="fld">Message<textarea name="m" rows="4" style="min-height:110px;padding:10px 12px;border:1px solid rgba(0,0,0,.16);border-radius:var(--rb);font-size:16px;resize:vertical"></textarea></label>
+        <p class="err" id="cerr" role="alert"></p>
+        <button class="btn btn-p" type="submit" style="width:100%">Envoyer ma demande</button>
+      </form>
+    </div>
+  </section>
+  <footer><div class="wrap foot"><span>© 2026 Révisio · Organisme de formation · N° de déclaration d'activité : à compléter</span><span>Mentions légales · Confidentialité · <a href="#/contact">Contact</a></span></div></footer>`;
+  const cf=$("#cf");if(cf)cf.onsubmit=e=>{e.preventDefault();const f=e.target;if(!f.n.value.trim()||!/^\S+@\S+\.\S+$/.test(f.e.value)){$("#cerr").textContent="Indiquez votre nom et un e-mail valide.";return}
+    f.innerHTML=`<h3 class="h3">Merci ${esc(f.n.value.trim())} !</h3><p class="muted" style="margin-top:8px">Votre demande est bien envoyée. Nous revenons vers vous sous 24 h ouvrées.</p>`};
   if(scrollTo){const el=document.getElementById(scrollTo);if(el)el.scrollIntoView()}else scrollTo0();
 }
 const scrollTo0=()=>window.scrollTo(0,0);
@@ -497,7 +562,7 @@ function profil(){const u=me();
 
 /* ================= ROUTEUR ================= */
 function route(){const h=location.hash.replace(/^#\/?/,"").split("/");const r=h[0]||"home";
-  const pub={home:()=>home(),fonctionnalites:()=>home("fonctionnalites"),"formations-public":()=>home("formations-public"),faq:()=>home("faq"),connexion:()=>auth("connexion"),inscription:()=>auth("inscription"),demo};
+  const pub={home:()=>home(),fonctionnalites:()=>home("fonctionnalites"),"formations-public":()=>home("formations-public"),faq:()=>home("faq"),contact:()=>home("contact"),pourqui:()=>home("pourqui"),organisme:()=>home("organisme"),connexion:()=>auth("connexion"),inscription:()=>auth("inscription"),demo};
   const priv={tableau:dashboard,formations:catalogue,formation:()=>course(h[1],h[2]),resultats:results,profil};
   if(pub[r]){if(me()&&(r==="connexion"||r==="inscription")){location.hash="#/tableau";return}nav(r==="home"?"home":r);pub[r]()}
   else if(priv[r]){if(!guard())return;nav(r==="formation"?"formations":r);priv[r]()}
